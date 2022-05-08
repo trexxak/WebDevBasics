@@ -1,0 +1,307 @@
+<!-- 
+    ------------------------------------------------------------------- 
+    
+    Einführung Webentwicklung I: Hypertext Markup Language 
+    
+    ...oder: HTML - Das Skelett der Webseite
+
+    ------------------------------------------------------------------- 
+-->
+
+<!--  
+    ---
+
+    Was ist index.html?
+
+    Die "index.html" ist die Standardadresse nach der ein HTTP-Client 
+    (also auch Webbrowser) sucht, wenn der Client auf einen Webserver mit 
+    Ordnerstruktur anstelle einer einzelnen Datei stößt.
+    
+    ---
+-->
+
+<!-- 
+    ---
+
+    HTML Logik-Baum:
+
+    Elementar für die Funktionalität ist die Aufgliederung des HTML-Dokuments 
+    in logische Verzweigungen. Symbolhaft ist hier die zwingend erforderliche
+    Aufteilung des "html"-Elements in die "head" und "body"-Kindelemente.
+
+    Ebendiese Gliederung sind die Voraussetzung für das DOM (Document Object Model),
+    welches dem Webentwickler unendliche Gestaltungsmöglichkeiten erlaubt.
+
+    Aufbau eines HTML-Dokuments:
+    
+    *Dokumententypdeklaration       
+    *html
+        *head
+            *meta       - Metadaten für den Browser
+            *script     - Verweis auf das auszuführende JavaScript
+            *style      - Interne Style-Regeln
+            *link       - Verweis, häufig auf Externe Style-Regeln
+            *title      - obligatorischer Dokumententitel
+        *body
+            *header     - semantisches Element
+            *content    - semantisches Element
+            *footer     - semantisches Element
+            
+
+    ---
+-->
+
+<!DOCTYPE html>
+<!-- Ein HTML-Dokument beginnt immer mit der Dokumententypdeklaration gefolgt von
+dem Wurzelelement des HTML-Dokuments: Dem "html"-Element. -->
+<html>
+    <!-- Das "html"-Element gliedert sich weiter auf in "head" und "body"-Element.
+    Während das "head"-Element Metadaten beherbergt, die nicht direkt sichtlich sind,
+    handelt es sich um die Inhalte des "body"-Elementes um alle darzustellenden Strukturen. -->
+    <head>
+    
+        <link rel="stylesheet" href="">
+        <!-- Das "link"-Element wird meist für den Verweis auf das stylesheet verwendet. -->
+        
+        <script src=""></script>
+        <!-- "script"-Elemente können sowohl im "head" als auch im "body"-Element geladen
+        werden. Zu beachten: das Skript kann nur auf bereits dargestellte Inhalte zugreifen! -->
+        
+        <title>Titel</title>
+        <!-- Das "title"-Element bestimmt den Text der Registerkarte im Browser. -->
+    </head>
+    <body>
+        <header></header>
+        
+        <content id="t_0_Allgemeines">
+            <!-- 
+                ---
+                
+                Aufbau eines HTML-Elements:
+
+                        Attribut    Text
+                        v          v
+                    <tag attr="wert">Text</tag>
+                    ^                     ^
+                öffnendes Tag         Schließendes Tag
+
+                Das Gesamtkonstrukt wird als Element bezeichnet.
+                
+                ---
+             -->
+            <!--
+                ---
+
+                HTML-Entitäten:
+
+                Aufgrund der funktionstragenden Schriftzeichen <, >, ", ', & und der 
+                Notwendigkeit manche Leerzeichen und Bindestriche zu schützen, 
+                können Entitäten als Alias für das gesuchte Zeichen verwendet werden:
+
+                    &amp;   - ergibt: &
+                    &lt;    - ergibt: <
+                    &gt;    - ergibt: >
+                    &quot;  - ergibt: "
+                    &apos;  - ergibt: '
+                    &nbsp;  - ergibt:     
+                    &#8209; - ergibt: -
+
+            -->
+        </content>
+
+        <content id="t_1_Allgemeine_HTML_Elemente">
+
+            <h1>Überschrift 1</h1>
+            <!-- Good Practice ist pro Dokument nur ein h1-Element zu wählen. -->
+            <h2>Überschrift 2</h2>
+            <h3>Überschrift 3</h3>
+            <h4>Überschrift 4</h4>
+            <h5>Überschrift 5</h5>
+            <h6>Überschrift 6</h6>
+            <!-- Überschriften beginnen immer in einer neuen Zeile und 
+                können, je nach Kontextebene, die höchste Form h1 bis zur
+                tiefsten Form h6 annehmen. -->
+            
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Consequuntur odit quaerat reprehenderit minima, vel veritatis 
+                iure molestiae unde similique perferendis dolorum ea dignissimos 
+                quis sit ipsum blanditiis sint sunt saepe rerum natus!
+            </p>
+            <!-- Paragraphen beginnen wie auch Überschriften in neuer Zeile. -->
+            
+            <pre>
+    Lorem ipsum       dolor sit, 
+        amet                   consectetur  
+          ad     ipisicing    elit.       Nisi ad 
+    minus    placeat!    Aperiam  autem asperiores      quibusdam?
+            </pre>
+            <!-- Vorformatierter Text (pre-Element) gibt Zeilenumbrüche und Leerzeichen
+            authentisch wieder. Ohne "pre"-Element kürzt HTML Zeilenumbrüche und Leerzeichen
+            zu maximal einem Leerzeichen.-->
+                
+            <ol>
+                <li>Eins</li>
+                <li>Zwei</li>
+                <li>Drei</li>
+            </ol>
+            <ul>
+                <li>Punkt</li>
+                <li>Quadrat</li>
+                <li>Raute</li>
+            </ul>
+            <!-- Die Listenelemente "ul" (ungeordnet) und "ol" (geordnet) unterscheiden
+            sich alleine durch inkrementierende oder gleichbleibende Aufführungszeichen.
+
+            In sich tragen beide Listentypen "li"-Kindelemente (list item), die eben die 
+            einzelnen Punkte definieren. Fügt man einem solchen "li"-Element einen weiteren
+            Listentyp als Kind zu, so wird die Liste um eine Unterebene erweitert.
+            -->
+    
+            <br>
+            <hr>
+            <!-- Unter "leeren" Elementen versteht man Elemente, die keines schließenden
+            Tags bedingen. Beispielhaft hierfür ist das "br"-Element (Break, also Zeilenumbruch)
+            als auch das "hr"-Element (Horizontal Ruler, also horizontale Linie). -->
+    
+    
+    
+            <img src="image.png">
+            <!-- Das "img"-Element bedingt einer "src"-Attribut (also einer Quelle). -->
+            <a href="https://github.com/trexxak/WebDevBasics">Link zum Repository</a>
+            <!-- Das "a"-Element (anchor) bedingt einer "href"-Attribut (also einem Verweis). -->
+        </content>
+
+
+
+        <content id="t_2_Tabellen_Elemente">
+
+            <!-- Um eine Tabelle in HTML zu erstellen, ist vorerst das "table"-Element
+            zu deklarieren. In ihm befindet sich wahlweise ein caption-Element (Tabellentitel),
+            um die Tabelle selbst zu definieren aber so viele "tr"-Elemente (table row) wie
+            Reihen in der Tabelle erwünscht sind. -->
+
+            <table>
+                <caption>Tabellentitel</caption>
+                <tr>
+                    <th>Zeile 1</th> 
+                    <!-- Das "th"-Element (table heading) entspricht einer Zelle die als 
+                    Überschrift (etwa eine Maßeinheit) verstanden werden soll.-->
+                    <th>Zeile 2</th>
+                    <th>Zeile 3</th>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <!-- Einzelne Zellen werden durch das "td"-Element 
+                        (table definition) definiert.-->
+                    <td>B</td>
+                    <td>C</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>E</td>
+                    <td>F</td>
+                </tr>
+            </table>
+        </content>
+        
+
+
+        <content id="t_3_Formular_Elemente">
+ 
+            <!-- Um Benutzerinhalte verwerten zu können, erweitert das "form"-Element
+            HTML um Formulareingabemöglichkeiten wie Textfelder, Buttons und Checkboxen, die
+            gewöhnlicherweise auf Drücken des "submit"-Buttons an einen Webserver übertragen
+            werden. 
+            
+            Die Attribut des "form"-Elements "action" verweist hier auf eine 
+            "Handler"-Webseite des Webservers, die Attribut "method" gibt an mit 
+            welcher Art von HTTP-Request die Daten übermittelt werden. 
+        
+            Da wir vorher nicht serverseitig operieren, geben wir dem Action-Attribut
+            vorerst einen leeren Wert.-->
+
+            <form action="" method="get">
+
+                <label for="my_text">Label</label>
+                <!-- Ein Label kann verwendet werden, um die Benutzerfreundlichkeit
+                von Benutzereingaben zu steigern. Auf Klick des Labels, wird der
+                Fokus an das in der "for"-Attribut deklarierte Element übergeben.-->
+                <input type="text" id="my_text">
+
+                <input type="button" value="Mein Button">
+                <input type="checkbox">+</input>
+
+                <input type="radio" name="my_radio">1</input>
+                <input type="radio" name="my_radio">2</input>
+                <!-- Anders als Checkboxen, schließen sich zusammengehörige Radio-Buttons
+                gegenseitig aus. Um dieses Verhalten zu erreichen, müssen jedoch
+                die jeweiligen Radio-Buttons auch mit demselben "name"-Attribut versehen sein.-->
+                
+                <select>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+
+                <input type="submit" value="Submit">
+                <!-- Der Submit-Button bezieht sich immer auf das gesamte Formular, und
+                sendet die Daten auf Klick anhand der angegebenen Methode an die angegebene
+                lokale Adresse. -->
+
+            </form>
+
+        </content>
+
+
+
+        <content id="t_4_Semantische_Elemente">
+
+            <!-- Semantische Elemente sind solche ohne vordefinierte Funktion, die in HTML alleine
+            eine rein ordnende Rolle spielen. Kombiniert durch globale Attribute wie 
+            "id", "name" und "class" jedoch, entfaltet sich hier die Macht des 
+            Document Object Models. Ebenfalls kann CSS sowohl Klassen als auch IDs 
+            als Selektoren wählen. 
+        
+            Das "div"-Element wird üblicherweise manuell oder per JavaScript mit 
+            Kindelementen befüllt. Das "span"-Element, kann innerhalb von Text eingesetzt
+            werden. -->
+
+            <div id="erstes_div">
+                <p class="erste_klasse">
+                    <span id="s1">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+                    Rem numquam optio iusto obcaecati consequatur porro aut 
+                    similique ipsa? Similique autem totam iusto aspernatur tempora 
+                    tenetur! Vitae repellendus accusantium eligendi temporibus.
+                </p>
+                <p class="zweite_klasse">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    <span id="s2">Rem numquam optio iusto obcaecati consequatur porro aut </span>
+                    similique ipsa? Similique autem totam iusto aspernatur tempora 
+                    tenetur! Vitae repellendus accusantium eligendi temporibus.
+                </p>
+            </div>
+            <div id="zweites_div">
+                <p class="erste_klasse">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Rem numquam optio iusto obcaecati consequatur porro aut 
+                    <span id="s3">similique ipsa? Similique autem totam iusto aspernatur tempora </span>
+                    tenetur! Vitae repellendus accusantium eligendi temporibus.
+                </p>
+                <p class="zweite_klasse">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Rem numquam optio iusto obcaecati consequatur porro aut 
+                    similique ipsa? Similique autem totam iusto aspernatur tempora 
+                    <span id="s4"> tenetur! Vitae repellendus accusantium eligendi temporibus. </span>
+                </p>
+            </div>
+        </content>
+
+        <footer>
+            <!-- Skripts, Navbars und Sonstiges. -->
+            <script src="script.js"></script>
+        </footer>
+
+    </body>
+    
+</html>
