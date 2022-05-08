@@ -1,3 +1,4 @@
+// TO-DO: AUFBRECHEN UND IN EINZELNE KAPITEL STECKEN!
 
 // Storage-Funktionen
 function use_session_storage(){

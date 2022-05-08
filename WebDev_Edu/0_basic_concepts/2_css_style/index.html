@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Das "link"-Element wird meist für den Verweis auf das stylesheet verwendet. -->
+
+    <title>Style mit CSS</title>
+</head>
+<body>
+    <content id="t_4_Semantische_Elemente">
+
+        <!-- Semantische Elemente sind solche ohne vordefinierte Funktion, die in HTML alleine
+        eine rein ordnende Rolle spielen. Kombiniert durch globale Attribute wie 
+        "id", "name" und "class" jedoch, entfaltet sich hier die Macht des 
+        Document Object Models. Ebenfalls kann CSS sowohl Klassen als auch IDs 
+        als Selektoren wählen. 
+    
+        Das "div"-Element wird üblicherweise manuell oder per JavaScript mit 
+        Kindelementen befüllt. Das "span"-Element, kann innerhalb von Text eingesetzt
+        werden. -->
+
+        <div id="allgemein_eins">
+            <p class="erste_klasse">
+                <span id="s1">Lorem ipsum,</span> dolor sit amet consectetur adipisicing elit.
+            </p>
+            <p class="zweite_klasse">
+                Lorem ipsum, <span id="s2">dolor sit</span> amet consectetur adipisicing elit. 
+            </p>
+        </div>
+        <div id="allgemein_zwei">
+            <p class="erste_klasse">
+                Lorem ipsum, dolor sit <span id="s3">amet consectetur</span> adipisicing elit. 
+            </p>
+            <p class="zweite_klasse">
+                Lorem ipsum, dolor sit amet consectetur <span id="s4">adipisicing elit.</span>
+            </p>
+        </div>
+        <div id="pseudo_elemente">
+            <p>
+                Lorem ipsum dolor sit <br>
+                Lorem ipsum dolor sit <br>
+                Lorem ipsum dolor sit <br>
+                Lorem ipsum dolor sit
+            </p>
+        </div>
+        <div id="pseudo_klassen">
+            <ul>
+                <h3>Ein paar Buttons:</h3>
+                <li><button>Hi!</button></li>
+                <li><button>Hi!</button></li>
+                <li><button>Hi!</button></li>
+            </ul>
+        </div>
+        <div id="transitions_animations">
+            <button>WOW!</button>
+        </div>
+    </content>
+</body>
+</html>

@@ -1,0 +1,297 @@
+/*
+------------------------------------------------------------------- 
+    
+Einführung Webentwicklung II: Cascading Style Sheets
+
+...oder: CSS - Die Aufmachung der Webseite
+
+-------------------------------------------------------------------  
+*/
+
+/* 
+
+Allgemein:
+
+    Als Entwickler interessiert uns die gestalterische Seite von Webseiten zwar nicht unbedingt,
+    jedoch verdeutlicht uns das Cascading Style Sheet die Funktionsweise des DOM ungemein und
+    ist auch aufgrund der leichten Syntax mit der jquery-Bibliothek eine beliebte Alternative 
+    zu den etwas umständlicheren Javascript-DOM-Manipulationen geworden.
+
+    CSS-Regeln können sowohl als "style"-Attribut eines HTML-Elements gesetzt werden, dokumentintern
+    durch das anführen des "style"-Elements im "head"-Element, oder aber ausgelagert als Datei mit
+    .css Dateierweiterung durch das "link"-Element im "head"-Element extern angesteuert werden.
+
+    Bevorzugt eingesetzt wird die externe Variante.
+
+
+Aufbau einer Style-Regel:
+
+    Selektor {Eigenschaft:Wert;Eigenschaft:Wert}
+
+
+Selektoren:
+
+    Selektor kann sowohl ein grundsätzliches HTML-Element sein,
+    eine Klasse darstellen oder aber ein bestimmtes ID-Attributs eines HTML-Elements sein:
+
+
+        *           -   Alles-Selektor. Wählt jedes Element.
+        p           -   Wählt als Selektor alle Paragraphen-Elemente im HTML-Dokument.
+        .klasse     -   Wählt alle mit dem Attribut 'class="klasse"' ausgewiesenen Elemente als Selektor.
+        #identitaet -   Wählt das Element mit dem Attribut 'id="identitaet"' als Selektor.
+
+        h1,h2,h3    -   Wählt alle h1,h2 und h3 Elemente als Selektor.
+        div p span  -   Wählt alle span-Elemente innerhalb p-Elemente innerhalb div-Elemente als Selektor.
+
+
+Eigenschaften:
+
+    CSS-Eigenschaften sind vielfältig und unterscheiden sich nach HTML-Element.
+    Eine kleine Auswahl der üblichsten Eigenschaft ist diesem Stylesheet zu entnehmen.
+
+*/
+
+* {
+    margin: 0px;
+    padding: 4px;
+}
+
+.erste_klasse {
+    font-family: 'Comic Sans MS';
+}
+
+.zweite_klasse {
+    font-family: 'Papyrus';
+}
+
+#allgemein_eins {
+    background-color: blue;
+    color: aquamarine;
+}
+
+#allgemein_zwei {
+    background-color: greenyellow;
+    color: green;
+}
+
+#s1,
+#s2,
+#s3,
+#s4 {
+    font-size: 32px;
+}
+
+#allgemein_zwei p {
+    font-weight: 900;
+    padding: 8px;
+}
+
+/* 
+
+Pseudo-Elemente:
+
+    Die sogenannten Pseudo-Elemente (also in etwa: Falsch-Elemente) sind so benannt, 
+    da sie nicht durch den Programmierer zu Elementen werden, sondern der Browser selbst 
+    diese Elemente "erschafft". Gleiches gilt auch für Pseudo-Klassen.
+
+    Pseudo-Elemente werden durch doppelte Doppelpunkte angeführt (etwa: "::first-line"),
+    und erlauben in modernen Browsern das selektieren und manipulieren ganz bestimmter Elemente,
+    und können sogar im Fall des ::before und ::after Selektors dem HTML-Dokument
+    Text hinzufügen.
+
+    Ältere Browser unterstützen Pseudo-Elemente nur bedingt.
+
+*/
+
+#pseudo_elemente::first-line{
+    color:rgb(255, 0, 0);
+    background-color: black;
+}
+
+#pseudo_elemente::first-letter{
+    font-size: xx-large;
+    margin-left:32px;
+}
+
+#pseudo_elemente p::selection {
+    color:blueviolet;
+    background-color:bisque;
+}
+
+#pseudo_elemente p::before{
+    font-style:italic;
+    content:"Erst mal"
+}
+
+#pseudo_elemente p::after{
+    font-style:italic;
+    content:"Kaffee";
+}
+
+/* 
+
+Pseudo-Klassen: 
+
+    Pseudo-Klassen sind zahlreicher als Pseudo-Elemente und werden durch nur einen
+    Doppelpunkt angeführt. Sie erlauben es ebenfalls granularer auf Elemente zuzugreifen.
+
+    Besonders interessant in diesem Zusammenhang ist die :hover und :focus -Pseudo-Klasse,
+    da Sie den Anschein von Interaktivität gibt.
+
+    Die :root -Pseudo-Klasse wählt immer das Wurzelelements des Dokuments aus, und ist so 
+    optimal für die Deklarierung globaler Variablen geeignet. Die Deklaration von css-Variablen
+    geschieht angeführt mit "--" vor dem Bezeichner, das Abrufen einer Variablen dann 
+    durch "var(--meineVariable)".
+
+*/
+
+:root{
+    --meineFarbe: #552a62;
+    --meineZahl: 42px;
+}
+
+#pseudo_klassen h3{
+    background-color: var(--meineFarbe);
+    font-size: var(--meineZahl);
+}
+
+#pseudo_klassen button{
+    color:black;
+    background-color:white;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 10%;
+}
+
+#pseudo_klassen :nth-child(2),
+#pseudo_klassen :nth-child(4){
+    background-color: yellow;
+}
+
+#pseudo_klassen button:hover{
+    color:blueviolet;
+    background-color:burlywood;
+    font-size: 24px;
+    border-style: none;
+    border-radius: 20%;
+}
+
+#pseudo_klassen button:focus{
+    color:blue;
+    background-color:grey;
+    font-size: 18px;
+    border-style: none;
+    border-radius: 40%;
+}
+
+#pseudo_klassen :not(button){
+    color:grey;
+}
+
+/* 
+
+Transitions und Animationen: 
+
+    Um rein durch CSS Inhalte noch interaktiver zu gestalten, können sowohl 
+    Transitions (Übergänge) als auch Animationen verwendet werden.
+
+    Transitions können nur durch ein auslösendes Event (wie etwa :hover) ausgeführt werden,
+    und kennen lediglich den Start- und Endzustand des jeweiligen Elements.
+
+    Animationen können automatisch aber auch durch Auslösung ausgeführt werden, und kennen
+    beliebig viele Zwischenzustände. Um die Zustände zu definieren, müssen sie durch
+    "@keyframes mein_bezeichner{}" in den gewünschten Prozentzahlen angeführt werden.
+
+*/
+
+@keyframes meine_animation{
+    0%{left: 0px;}
+    25%{left: 256px;}
+    50%{left: 128px;}
+    100%{left: 512px;}
+}
+
+#transitions_animations button{
+    position: relative;
+    color: black;
+    background-color:white;
+    width: 128px;
+    height: 128px;
+
+    transition-property: width color background-color;
+    transition-duration: 256ms;
+    transition-timing-function: ease-in-out;
+    transition-delay: 64ms;
+
+    animation-name: meine_animation;
+    animation-duration: 1400ms;
+    animation-timing-function: linear;
+    animation-delay: 32ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#transitions_animations button:hover{
+    color: white;
+    background-color:black;
+    width: 256px;
+    height: 64px;
+}
+
+/*
+
+CSS-VERWANDTE FRAMEWORKS:
+
+    TAILWIND - Fortgeschrittene Styles: 
+
+        Größere Projekte mit einheitlichen Stilelementen, lassen sich mit etwas Aufwand
+        mit Tailwind erstellen. Ein Vorteil gegenüber Bootstrap ist hier, dass Stile 
+        selbst bestimmt werden können.
+
+            Dokumentation:
+
+                https://tailwindcss.com/docs/installation/play-cdn
+
+            Content Delivery Network - Links:
+
+                <script src="https://cdn.tailwindcss.com"></script>
+
+    BOOTSTRAP - Style leichtgemacht:
+
+        Um schnell und unkompliziert gestalterisch tätig zu werden, lässt sich die beliebte
+        Bootstrap-Bibliothek an dieser Stelle erwähnen.
+
+            Dokumentation:
+
+                https://getbootstrap.com/docs/5.1/getting-started/introduction/
+
+            Content Delivery Network - Links:
+
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+                integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    JQUERY - Schnellzugriff auf DOM-Funktionen:
+        
+        jquery benutzt CSS-Selektoren, um durch die einprägsame CSS-Syntax durch das Dokument zu
+        navigieren.
+
+            Dokumentation:
+
+                https://api.jquery.com/category/manipulation/
+
+            Content Delivery Network - Links:
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    SASS - CSS für Programmierer: 
+
+        SASS (oder: Syntactically Awesome Style Sheets) ist eine Prä-Prozessierungssprache für CSS.
+        Die zugehörige Dateierweiterung .scss muss also zuvor in eine .css Datei konvertiert werden.
+        Der Aufwand mag sich jedoch für größere Projekte lohnen, da die Syntax von SASS automatisch
+        dazu führt, dass CSS-Dateien nicht zu unübersichtlich werden.
+
+            Webseite: 
+                https://sass-lang.com
+
+*/

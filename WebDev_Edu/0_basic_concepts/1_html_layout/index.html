@@ -59,15 +59,12 @@ dem Wurzelelement des HTML-Dokuments: Dem "html"-Element. -->
     Während das "head"-Element Metadaten beherbergt, die nicht direkt sichtlich sind,
     handelt es sich um die Inhalte des "body"-Elementes um alle darzustellenden Strukturen. -->
     <head>
-    
         <link rel="stylesheet" href="">
-        <!-- Das "link"-Element wird meist für den Verweis auf das stylesheet verwendet. -->
-        
         <script src=""></script>
         <!-- "script"-Elemente können sowohl im "head" als auch im "body"-Element geladen
         werden. Zu beachten: das Skript kann nur auf bereits dargestellte Inhalte zugreifen! -->
         
-        <title>Titel</title>
+        <title>Layout mit HTML</title>
         <!-- Das "title"-Element bestimmt den Text der Registerkarte im Browser. -->
     </head>
     <body>
@@ -166,13 +163,12 @@ dem Wurzelelement des HTML-Dokuments: Dem "html"-Element. -->
     
     
     
-            <img src="image.png">
+            <img src="hypertext.png" width="256">
+            <img src="markup.png" width="256">
             <!-- Das "img"-Element bedingt einer "src"-Attribut (also einer Quelle). -->
             <a href="https://github.com/trexxak/WebDevBasics">Link zum Repository</a>
             <!-- Das "a"-Element (anchor) bedingt einer "href"-Attribut (also einem Verweis). -->
         </content>
-
-
 
         <content id="t_2_Tabellen_Elemente">
 
@@ -205,8 +201,6 @@ dem Wurzelelement des HTML-Dokuments: Dem "html"-Element. -->
             </table>
         </content>
         
-
-
         <content id="t_3_Formular_Elemente">
  
             <!-- Um Benutzerinhalte verwerten zu können, erweitert das "form"-Element
@@ -253,53 +247,8 @@ dem Wurzelelement des HTML-Dokuments: Dem "html"-Element. -->
 
         </content>
 
-
-
-        <content id="t_4_Semantische_Elemente">
-
-            <!-- Semantische Elemente sind solche ohne vordefinierte Funktion, die in HTML alleine
-            eine rein ordnende Rolle spielen. Kombiniert durch globale Attribute wie 
-            "id", "name" und "class" jedoch, entfaltet sich hier die Macht des 
-            Document Object Models. Ebenfalls kann CSS sowohl Klassen als auch IDs 
-            als Selektoren wählen. 
-        
-            Das "div"-Element wird üblicherweise manuell oder per JavaScript mit 
-            Kindelementen befüllt. Das "span"-Element, kann innerhalb von Text eingesetzt
-            werden. -->
-
-            <div id="erstes_div">
-                <p class="erste_klasse">
-                    <span id="s1">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
-                    Rem numquam optio iusto obcaecati consequatur porro aut 
-                    similique ipsa? Similique autem totam iusto aspernatur tempora 
-                    tenetur! Vitae repellendus accusantium eligendi temporibus.
-                </p>
-                <p class="zweite_klasse">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                    <span id="s2">Rem numquam optio iusto obcaecati consequatur porro aut </span>
-                    similique ipsa? Similique autem totam iusto aspernatur tempora 
-                    tenetur! Vitae repellendus accusantium eligendi temporibus.
-                </p>
-            </div>
-            <div id="zweites_div">
-                <p class="erste_klasse">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                    Rem numquam optio iusto obcaecati consequatur porro aut 
-                    <span id="s3">similique ipsa? Similique autem totam iusto aspernatur tempora </span>
-                    tenetur! Vitae repellendus accusantium eligendi temporibus.
-                </p>
-                <p class="zweite_klasse">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                    Rem numquam optio iusto obcaecati consequatur porro aut 
-                    similique ipsa? Similique autem totam iusto aspernatur tempora 
-                    <span id="s4"> tenetur! Vitae repellendus accusantium eligendi temporibus. </span>
-                </p>
-            </div>
-        </content>
-
         <footer>
             <!-- Skripts, Navbars und Sonstiges. -->
-            <script src="script.js"></script>
         </footer>
 
     </body>

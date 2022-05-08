@@ -1,0 +1,23 @@
+/* 
+
+Aufgaben zu 2_css_style:
+
+Aufgabe 1 (10 Minuten): 
+    Färben Sie die Textfarbe der folgenden Elemente rot ein: 
+    Erhöhen Sie die Schriftgröße der folgenden Elemente: 
+    Ändern Sie die Schriftart der folgenden Elemente:
+
+Aufgabe 2 (10 Minuten):
+    Färben Sie die Hintergrundfarbe der folgenden Elemente gelb ein: 
+    Erhöhen Sie die Schriftgröße der folgenden Elemente nur wenn die Maus darüber liegt: 
+    Ändern Sie die Schriftart der folgenden Elemente nur wenn es ausgewählt wurde:
+
+Aufgabe 3 (10 Minuten): 
+    Färben Sie die Hintergrundfarbe der folgenden Elemente durch Transitions von weiss nach schwarz:
+    Färben Sie die Hintergrundfarbe der folgenden Elemente durch Animations von rot nach gelb nach blau:
+
+*/
+
+#css{
+    color:black;
+}
