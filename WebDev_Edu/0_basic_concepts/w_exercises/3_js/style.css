@@ -1,0 +1,69 @@
+body{
+    display:flex;
+    justify-content: center;
+}
+
+
+
+#grid{
+    background-color: rgb(80, 80, 105);
+    border-radius:16px;
+    width:25%;
+    height:100%;
+    padding:32px;
+
+    display:inline-grid;
+    justify-content: center;
+    align-content: center;
+
+    gap: 30px 30px;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 20% 15% 15% 15% 20%;
+}
+
+input{
+    padding: 40px;
+    font-size: 40px;
+    border-style: none;
+    border-radius: 8%;
+    text-align: justify;
+}
+
+.clear{
+    grid-column: 1 / 2;
+    background-color: rgb(250, 180, 100);
+    color:rgb(200, 60, 20);
+}
+.display{
+    grid-column: 2 / 5;
+    background-color: rgb(255, 241, 215);
+    color:rgb(140, 130, 120);
+    font-size:80px;
+    outline:none;
+    /* text-align:end; */
+
+}
+
+.decimal{
+    background-color:rgb(200, 200, 230);
+}
+
+.equals{
+    background-color:rgb(255, 115, 50);
+    color:rgb(255, 230, 200);
+}
+
+.operation{
+    background-color:rgb(100, 100, 250);
+    color:rgb(230, 220, 250);
+}
+
+.number{
+    background-color:rgb(150, 150, 230);
+    color:rgb(20, 20, 90);
+}
+
+input:focus{
+    background-color: white;
+    color:black;
+}
