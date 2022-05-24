@@ -2,10 +2,25 @@
         Variabeln 
 */
 
-const myConstant = ""; // "const"-Variable muss initiiert werden!
+const myConstant = "const"; // "const"-Variable muss initiiert werden!
+
+// "const"-Variablen sind nicht echte Konstanten,
+// viel eher ist ihre Verwendung der von Konstanten ähnlich. Anders als Konstanten jedoch,
+// lässt ein mit "const" bestimmtes Objekt oder Array aber die Veränderung der Eigenschaften
+// respektiv Elemente zu. Nur moderne Browser.
 
 let myNewVariable = "new";
+
+// "let"-Variabeln sind anders als die älteren "var"-Variabeln nicht redeklarierbar, und 
+// erlauben neben globaler- und Funktions-Ebene anders als "var" auch Block-Ebenen.
+// Nur moderne Browser.
+
+
 var myOldVariable = "old";
+
+// "var"-Variabeln waren bis 2015 die einzige Form der Variabeln in JavaScript. 
+// Falls für ältere Browser entwickelt wird, sollte mit "var" gearbeitet werden.
+// In allen anderen Fällen, sollte die neueren "let"-Variabeln verwendet werden.
 
 function demoRedeclaration(){
 
@@ -50,35 +65,4 @@ function demoHoisting(){
     var hoistVar;
 
     console.log(hoistVar)
-}
-
-
-function demoConstObjects(){
-    
-    const monster = {
-        number:248,
-        name:"Tyranitar",
-        type_0:"Rock",
-        type_1:"Dark"}
-
-    monster.name="Despotar"
-    
-    // monster = {number:246, name:"Larvitar", type_0:"Rock", type_1:"Ground"} 
-    // Produziert Fehler!
-
-    console.log(monster)
-
-}
-
-function demoConstArrays(){
-
-    const team = ["Tyranitar", "Ferrothorn", "Darmanitan"];
-    team[0] = "Despotar";
-    team.pop(1);
-
-    // team = ["Larvitar", "Ferroseed", "Darumaka"]
-    // Produziert Fehler!
-
-    console.log(team)
-
 }

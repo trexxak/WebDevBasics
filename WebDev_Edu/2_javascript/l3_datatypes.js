@@ -20,7 +20,6 @@ function demoCheckTypes(){
 
 
 
-
 // Strings
 function demoStrings(){
     let stringVorname = "Arthas";
@@ -226,11 +225,23 @@ function demoOther(){
 
 
 // Arrays
-function demoArrays(){
+function demoArray(){
 
     let oneD = [1,2,3,"a","b","c"]; // nur eindimensioneller Array von JavaScript supportet.
     let twoD = [[1,2,3],["a,b,c"]]; // "Workaround" - Nested Arrays...
     console.log(oneD,twoD);
+}
+
+function demoConstArray(){
+    const arr = [1,2,3,"a","b","c"];
+
+    // arr = ["x","y","z"] // produziert Fehler, aber:
+
+    arr[0] = "x";
+    arr[1] = "y";
+    arr[2] = "z";
+
+    console.log(arr)
 }
 
 // Array-Methoden
@@ -268,10 +279,26 @@ function demoObject(){
         id:0,
         name:"something",
         method:function(){
-            console.log(this.name);
+            console.log(this.id,this.name);
         }
     };
     
+    someObject.id = 1
+    someObject.name = "new name"
     someObject.method()
+
 }
 
+function demoConstObject(){
+    const obj = {
+        id: 0,
+        name: "something",
+        desc: "long text about the thing"
+    }
+
+    // obj = {id:42, name: "Radio", desc:"long text about the thing"} // produziert Fehler, aber:
+    obj.id = 42;
+    obj.name = "Radio";
+
+    console.log(obj)
+}
