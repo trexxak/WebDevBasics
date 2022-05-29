@@ -1,0 +1,10 @@
+canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: max;
+    bottom: max;
+    z-index: -1;
+    background-color: black;
+  }
+  
