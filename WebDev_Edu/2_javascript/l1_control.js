@@ -5,6 +5,7 @@
 function demoFunction(parameter1="default",parameter2=1){
     let result = parameter1+parameter2;
     return result;
+    console.log("this will never be executed");
 }
 // console.log(demoFunction); // Referenz: Die Funktion als solche wird ausgegeben.
 // console.log(demoFunction()); // Aufruf: Die Funktion wird aufgerufen, der Rückgabewert ausgegeben.
@@ -91,7 +92,7 @@ function demoForIn(){
 }
 
 function demoForOf(){
-    // maps!
+    // For Each, quasi
     object = "Lorem Ipsum"
     for (const iterator of object) {
         console.log(iterator)
@@ -104,8 +105,8 @@ function demoForOf(){
 */
 
 function demoErrorHandling(){
-    let x = 3;
-    let y = 3;
+    let x = -4;
+    let y = 0;
 
     try {
         console.log(x/y)
@@ -116,7 +117,6 @@ function demoErrorHandling(){
     }
 
 }
-
 
 // function simpleCesar(stringToEncode="Bello bellt!",shift=1){
 //     let new_string = ""

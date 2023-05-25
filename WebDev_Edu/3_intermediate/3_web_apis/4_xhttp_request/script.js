@@ -1,3 +1,5 @@
+// VERALTET, stattdessen: Fetch-API!
+
 function requestXhttp(url){
 
     let xhttp = new XMLHttpRequest();

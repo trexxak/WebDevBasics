@@ -5,6 +5,9 @@
     
     ...oder: HTML - Das Skelett der Webseite
 
+    HTML ist die Standardmarkupsprache für Dokumente, die im Webbrowser angezeigt werden sollen. 
+    Es definiert den Aufbau und die Struktur der Webseiteninhalte.
+
     ------------------------------------------------------------------- 
 -->
 
@@ -13,10 +16,10 @@
 
     Was ist index.html?
 
-    Die "index.html" ist die Standardadresse nach der ein HTTP-Client 
-    (also auch Webbrowser) sucht, wenn der Client auf einen Webserver mit 
-    Ordnerstruktur anstelle einer einzelnen Datei stößt.
-    
+    Die "index.html" ist die erste Seite, die ein Webserver sendet, wenn eine 
+    Anforderung an eine Website ohne spezifische Dateianforderung gesendet wird. 
+    Sie ist das Gesicht Ihrer Website und die erste Seite, die Benutzer normalerweise sehen.
+
     ---
 -->
 
@@ -25,28 +28,29 @@
 
     HTML Logik-Baum:
 
-    Elementar für die Funktionalität ist die Aufgliederung des HTML-Dokuments 
-    in logische Verzweigungen. Symbolhaft ist hier die zwingend erforderliche
-    Aufteilung des "html"-Elements in die "head" und "body"-Kindelemente.
+    HTML-Dokumente werden als Baumstrukturen betrachtet, bekannt als DOM (Document Object Model). Der Grund dafür ist, dass HTML-Dokumente in logischen Verzweigungen aufgebaut sind. Ein typisches Beispiel ist die notwendige Aufteilung des "html"-Elements in die "head" und "body"-Kindelemente.
 
-    Ebendiese Gliederung sind die Voraussetzung für das DOM (Document Object Model),
-    welches dem Webentwickler unendliche Gestaltungsmöglichkeiten erlaubt.
+    ---
+-->
+
+<!--
+    ---
 
     Aufbau eines HTML-Dokuments:
     
-    *Dokumententypdeklaration       
+    *Dokumententypdeklaration (<!DOCTYPE html>)
     *html
         *head
-            *meta       - Metadaten für den Browser
+            *meta       - Metadaten für den Browser und Suchmaschinen
             *script     - Verweis auf das auszuführende JavaScript
             *style      - Interne Style-Regeln
-            *link       - Verweis, häufig auf Externe Style-Regeln
-            *title      - obligatorischer Dokumententitel
+            *link       - Verweis, häufig auf externe Style-Regeln
+            *title      - Obligatorischer Dokumententitel
         *body
-            *header     - semantisches Element
-            *content    - semantisches Element
-            *footer     - semantisches Element
-            
+            *header     - Semantisches Element für den Kopfbereich
+            *nav        - Semantisches Element für die Navigation
+            *main       - Hauptinhalt der Webseite
+            *footer     - Semantisches Element für den Fußbereich
 
     ---
 -->
@@ -59,7 +63,14 @@ dem Wurzelelement des HTML-Dokuments: Dem "html"-Element. -->
     Während das "head"-Element Metadaten beherbergt, die nicht direkt sichtlich sind,
     handelt es sich um die Inhalte des "body"-Elementes um alle darzustellenden Strukturen. -->
     <head>
+
+        <meta charset="UTF-8">
+        <!-- "charset" gibt den Zeichensatz für das Dokument an, in der Regel "UTF-8". -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- "viewport" gibt an, wie der Inhalt auf verschiedenen Geräten angezeigt wird. -->
+
         <link rel="stylesheet" href="">
+        <!-- Das "link"-Element verweist auf externe CSS-Dateien. -->
         <script src=""></script>
         <!-- "script"-Elemente können sowohl im "head" als auch im "body"-Element geladen
         werden. Zu beachten: das Skript kann nur auf bereits dargestellte Inhalte zugreifen! -->
@@ -68,7 +79,9 @@ dem Wurzelelement des HTML-Dokuments: Dem "html"-Element. -->
         <!-- Das "title"-Element bestimmt den Text der Registerkarte im Browser. -->
     </head>
     <body>
-        <header></header>
+        <header>
+            <!-- Das "header"-Element enthält in der Regel den Titel und einige navigierbare Links. -->
+        </header>
         
         <content id="t_0_Allgemeines">
             <!-- 
@@ -248,7 +261,7 @@ dem Wurzelelement des HTML-Dokuments: Dem "html"-Element. -->
         </content>
 
         <footer>
-            <!-- Skripts, Navbars und Sonstiges. -->
+            <!-- Das "footer"-Element enthält Informationen über das Dokument, wie Autor, Copyright-Daten, Links zu Datenschutzerklärungen, etc. -->
         </footer>
 
     </body>

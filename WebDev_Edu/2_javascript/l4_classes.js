@@ -29,7 +29,6 @@ function demoClassObject(){
     console.log(machineFromClass);
 
 }
-
 // Konstruktor und Eigenschaften
 
 function demoConstructor(){
@@ -46,7 +45,6 @@ function demoConstructor(){
     let truck = new Car(2032,"Tesla","Cybertruck")
     console.log(truck)
 }
-
 // Private und Public
 
 function demoAccess(){
@@ -86,7 +84,6 @@ function demoMethods(){
 
     console.log(operation)
 }
-
 // Statische Methoden und Eigenschaften
 
 function demoStaticClass(){

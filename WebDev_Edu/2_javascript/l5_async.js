@@ -1,20 +1,20 @@
-/* 
+/*
         Async & Await
 */
 
 
 // Callbacks
 
-/* 
+/*
     Javascript selbst ist single-threaded, das bedeutet kann nicht asynchron Code ausführen.
-    Aufgrunddessen wurde vor Einführung von Promises und später des async/ await Keywords 
-    mit callbacks gearbeitet. 
-    
+    Aufgrunddessen wurde vor Einführung von Promises und später des async/ await Keywords
+    mit callbacks gearbeitet.
+
     So ist es möglich auf die Ausführung einer Funktion zu warten bis der Rest des Codes
     ausgeführt wird. Noch nicht möglich ist jedoch das simultane Ausführen von Code.
 
-    Ein Callback stellt nichts weiter dar als eine als Argument 
-    übergebene Funktion innerhalb einer anderen Funktion. 
+    Ein Callback stellt nichts weiter dar als eine als Argument
+    übergebene Funktion innerhalb einer anderen Funktion.
 */
 
 function demoCallback(){
@@ -24,7 +24,7 @@ function demoCallback(){
 }
 
 function demoCall(callback){
-    callback(10001) // produzierender Code - kann länger andauern
+    callback() // produzierender Code - kann länger andauern
     console.log("Callbackfunktion wurde ausgeführt!") // konsumierender Code - muss warten
 }
 
@@ -32,7 +32,7 @@ function demoCall(callback){
 
 /*
     Mit ES6, wurde durch die Promise Browser-API das asynchrone Programmieren mit
-    Javascript innerhalb moderner Browser ermöglicht. 
+    Javascript innerhalb moderner Browser ermöglicht.
 
     Vereinfacht ausgedrückt ist eine Promise ein zurückgegebenes Objekt and das callbacks
     gekoppelt wird.
@@ -86,7 +86,7 @@ function demoPromise(){
 
 /*
     Mit "async" gekennzeichnete Funktionen geben immer eine Promise zurück.
-    
+
     Das await-Schlüsselwort kann nur innerhalb asynchroner Funktionen angewandt werden.
     Dies führt dazu, dass auf die Erfüllung einer promise gewartet wird.
 */
@@ -105,6 +105,6 @@ async function demoAsyncPromise() {
     let promise = new Promise(function(resolve) {
       setTimeout(() => {resolve("Hi!")},2500);
     });
-    
+
     console.log(await promise);
 }

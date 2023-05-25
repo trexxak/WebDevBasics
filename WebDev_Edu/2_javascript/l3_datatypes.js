@@ -2,6 +2,7 @@
         Datentypen 
 */
 
+
 // Datentyp kontrollieren
 function demoCheckTypes(){
     console.log("String:")
@@ -16,9 +17,6 @@ function demoCheckTypes(){
     console.log("Objekt:")
     console.log(typeof({}))
 }
-
-
-
 
 // Strings
 function demoStrings(){
@@ -152,6 +150,7 @@ function demoNumberMethods(){
     console.log(stringed,exponentiate,precise,fixed,falseNum,correctNum,FloatParse,IntParse)
 }
 
+
 // Math-Objekt
 function demoMathObject(){
     console.log(Math.PI,Math.E) // Weitere Konstanten: SQRT2, SQRT1_2, LN2, LN10, LOG2E, LOG10E
@@ -183,7 +182,7 @@ function demoDateObject(){
     let today_time = Date.now();
     let today = new Date(); // Browserdatum und Uhrzeit
     let someday = new Date("1990-03-07T03:34:00Z"); // Kurzform für bestimmtes Datum
-    console.log(zero, today_time, today, someday);
+    // console.log(zero, today_time, today, someday);
     
 
     // get-Methoden (analog dazu: set-Methoden)
@@ -194,14 +193,14 @@ function demoDateObject(){
     let s = someday.getSeconds();
     let ms = someday.getMilliseconds();
 
-    console.log(t,h,m,s,ms)
+    // console.log(t,h,m,s,ms)
 
     let dt = someday.getDate(); // gibt den Tag im Monat zurück
     let day = someday.getDay(); // gibt Wochentag als Ziffer 1-7 zurück
     let mon = someday.getMonth(); // gibt Index des Monats zurück (März -> 2)
     let yea = someday.getFullYear(); // gibt das Jahr zurück
 
-    console.log(dt,day,mon,yea)
+    // console.log(dt,day,mon,yea)
 
 }
 
@@ -214,11 +213,22 @@ function demoBool(){
     let wrong = false;
 }
 
-// null, undefined und Not a Number
+// null, undefined, Not a Number und Infinity
 function demoOther(){
     let none = null; // Rückgabe, wenn Wert nicht existent.
+
     let what = undefined; // Rückgabe, wenn Wert noch nicht deklariert.
-    let nan = NaN; // Rückgabe, wenn Wert keine Zahl darstellt.
+    let x;
+    console.log(x)
+
+    let nan = NaN; // Rückgabe, wenn Wert nicht existierend oder nicht numerisch.
+
+    let inf = Infinity; // Rückgabe, wenn Wert zu groß ist.
+    let y = 3/ 0;
+    console.log(y)
+
+
+
 }
 
 
@@ -240,7 +250,9 @@ function demoConstArray(){
     arr[0] = "x";
     arr[1] = "y";
     arr[2] = "z";
+    arr[6] = "d";
 
+    arr[10] = 5;
     console.log(arr)
 }
 
@@ -270,14 +282,13 @@ function demoArrayMethods(){
 }
 
 
-
-
 // Objects
 function demoObject(){
 
     let someObject = {
         id:0,
         name:"something",
+
         method:function(){
             console.log(this.id,this.name);
         }

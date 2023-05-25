@@ -23,6 +23,8 @@ anhand der sogenannten DOM-Manipulationen ist möglich!
     // Globale Variablendeklaration
 var my_var = "Hello!";
 
+
+
     // Funktiondeklaration
 function alert_function(param){
     alert(param);
@@ -63,12 +65,12 @@ document.querySelector("#para3").id="id_set_by_javascript";
     // die Eigenschaften des selektierten DOM-Elements entsprechen denen des
     // HTML-Elements, und können somit per JavaScript neu definiert werden.
 
-var btns = document.getElementsByTagName("button");
+let btns = document.getElementsByTagName("button");
 for (let i = 0; i < btns.length; i++) {
     btns[i].style="width:256px;height:256px;";    
 }
 
-var blue_btns = document.getElementsByClassName("blue");
+let blue_btns = document.getElementsByClassName("blue");
 for (let i = 0; i < blue_btns.length; i++) {
     blue_btns[i].style.backgroundColor="lightblue";
 }
@@ -101,7 +103,7 @@ document.getElementById("button1").addEventListener("mousemove", function(e) {
     // Element-Tags des Buttons geschrieben werden.
 
 document.getElementById("button1").addEventListener("click", function(e) {
-    var new_li = document.createElement("li");
+    let new_li = document.createElement("li");
     new_li.innerHTML = `${e.x}, ${e.y}`;
     document.getElementById("list").appendChild(new_li);
 });
@@ -111,11 +113,6 @@ document.getElementById("button1").addEventListener("click", function(e) {
 
     // WICHTIG: Elternlose Elemente werden im HTML-Dokument nicht angezeigt! Die Assoziation
     // mit einem Elternelement via "appendChild" ist also essentiell!
-
-    //todo
-// document.write("nyi");
-// print()
-
 
 /* JavaScript-Frameworks:
         JQUERY - Schnellzugriff auf DOM-Funktionen:
